@@ -213,7 +213,7 @@ button, input, select { font: inherit; color: inherit; }
 
 /* ---------- Route: the stop list ---------- */
 
-.route { margin: 0; padding: 0; list-style: none; max-height: 30rem; overflow: hidden auto; }
+.route { margin: 0; padding: 0; list-style: none; }
 .stop code { overflow-wrap: anywhere; }
 .route-empty { margin: 0; color: var(--muted); }
 
