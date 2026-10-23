@@ -1,0 +1,56 @@
+/* Transit-signage palette. Colour carries meaning: blue = a request on its way,
+   green = success, red = refused, amber = where the request is right now. */
+:root {
+  --ground: #e9ecef;
+  --surface: #f8f9fa;
+  --ink: #18202c;
+  --muted: #5b6676;
+  --rail: #c5ccd4;
+  --route: #1f5fbf;
+  --go: #23865a;
+  --stop: #c8382e;
+  --signal: #e3a21a;
+  --station-fill: #ffffff;
+
+  --font: 'Overpass', 'Segoe UI', sans-serif;
+  --font-code: 'Overpass Mono', ui-monospace, monospace;
+
+  /* Modular scale, ratio 1.25 */
+  --step--1: 0.8rem;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.563rem;
+  --step-3: 2.441rem;
+
+  --gap: 1.25rem;
+  --radius-panel: 14px;
+  --radius-control: 999px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #12171f;
+    --surface: #1a212c;
+    --ink: #e7ebf0;
+    --muted: #95a1b2;
+    --rail: #2f3947;
+    --route: #5b93e8;
+    --go: #3fb27c;
+    --stop: #e5594f;
+    --signal: #f0b43a;
+    --station-fill: #1a212c;
+  }
+}
+
+:root[data-theme="dark"] {
+  --ground: #12171f;
+  --surface: #1a212c;
+  --ink: #e7ebf0;
+  --muted: #95a1b2;
+  --rail: #2f3947;
+  --route: #5b93e8;
+  --go: #3fb27c;
+  --stop: #e5594f;
+  --signal: #f0b43a;
+  --station-fill: #1a212c;
+}
