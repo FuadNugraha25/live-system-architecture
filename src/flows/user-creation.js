@@ -5,7 +5,7 @@
 const USERNAME_PATTERN = /^[a-z0-9][a-z0-9._-]{2,31}$/
 const NAME_MAX_LENGTH = 80
 const AGENT_CODE_MAX_LENGTH = 40
-const DEFAULT_PASSWORD = '123456'
+const DEFAULT_PASSWORD = 'default-pass'
 const RATE_LIMIT = 25
 
 const CREATED = 'user_creation_history.created'
