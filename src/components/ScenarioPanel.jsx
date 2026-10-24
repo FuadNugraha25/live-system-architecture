@@ -1,3 +1,18 @@
+function FieldControl({ field, value, onChange }) {
+  const handle = (event) => onChange(event.target.value)
+  if (field.type === 'select') {
+    return (
+      <select value={value} onChange={handle}>
+        {field.options.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
+      </select>
+    )
+  }
+  if (field.type === 'textarea') {
+    return <textarea rows={field.rows ?? 5} spellCheck={false} value={value} onChange={handle} />
+  }
+  return <input type="text" autoComplete="off" spellCheck={false} value={value} onChange={handle} />
+}
+
 export default function ScenarioPanel({ flow, values, selectedId, onChange, onScenario, onSubmit }) {
   return (
     <aside className="scenarios">
@@ -18,15 +33,7 @@ export default function ScenarioPanel({ flow, values, selectedId, onChange, onSc
         {flow.fields.map((field) => (
           <label key={field.id} className="field">
             <span>{field.label}</span>
-            {field.type === 'select'
-              ? (
-                <select value={values[field.id]} onChange={(e) => onChange(field.id, e.target.value)}>
-                  {field.options.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
-                </select>
-              )
-              : (
-                <input type="text" autoComplete="off" spellCheck={false} value={values[field.id]} onChange={(e) => onChange(field.id, e.target.value)} />
-              )}
+            <FieldControl field={field} value={values[field.id]} onChange={(value) => onChange(field.id, value)} />
           </label>
         ))}
         <button type="submit" className="primary">Run with these values</button>
