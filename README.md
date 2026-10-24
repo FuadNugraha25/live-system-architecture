@@ -4,7 +4,7 @@ Animated simulations of the Protea Internal Listing backend. Each flow shows a
 request travelling between the Edge Function, Supabase Auth and the database
 tables, with the real checks and the real order of steps, on fake data.
 
-Protea's code (`D:\Github\Protea_Internal_Listing`) is the read-only reference.
+The Protea Internal Listing codebase (a separate, private repo) is the read-only reference.
 Nothing here connects to a real database.
 
 ## Stack
